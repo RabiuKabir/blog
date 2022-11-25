@@ -6,14 +6,19 @@ const postSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: [true, 'A tour must have a name'],
+      required: [true, 'A post must have a name'],
       unique: true,
-      trim: true,
-      maxlength: [40, 'A tour name must have less or equal then 40 characters'],
-      minlength: [10, 'A tour name must have more or equal then 10 characters']
-      // validate: [validator.isAlpha, 'Tour name must only contain characters']
+      trim: true
     },
-   
+    summary: {
+      type: String,
+      trim: true,
+      required: [true, 'A post must have a summary']
+    },
+    imageCover: {
+      type: String,
+      required: [true, 'A post must have a cover image']
+    },
     description: {
       type: String,
       required: [true, 'A post must have a description']
