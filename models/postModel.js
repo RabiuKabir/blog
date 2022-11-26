@@ -23,8 +23,13 @@ const postSchema = new mongoose.Schema(
       type: String,
       required: [true, 'A post must have a description']
     },
-   
-    dates: [Date]
+    dates: [Date],
+     user: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User'
+      }
+    ]
   },
   {
     toJSON: { virtuals: true },
