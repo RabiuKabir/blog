@@ -1,5 +1,6 @@
 const express = require('express');
 const postController = require('./../controllers/postController');
+const authController = require('./../controllers/authController');
 
 const router = express.Router();
 
@@ -7,12 +8,18 @@ const router = express.Router();
 router
   .route('/')
   .get(postController.getAllPosts)
-  .post(postController.createPost);
+  .post(authController.protect, 
+        authController.restrictTo('user'),
+        postController.createPost);
 
 router
   .route('/:id')
   .get(postController.getPost)
-  .patch(postController.updatePost)
-  .delete(postController.deletePost);
+  .patch(authController.protect, 
+        authController.restrictTo('admin'),
+        postController.updatePost)
+  .delete(authController.protect, 
+        authController.restrictTo('admin'),
+        postController.deletePost);
 
 module.exports = router;
