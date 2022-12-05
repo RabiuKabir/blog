@@ -37,6 +37,19 @@ const postSchema = new mongoose.Schema(
   }
 );
 
+postSchema.pre(/^find/, function(next) {
+  this.populate({
+    path: 'user',
+    select: 'name'
+  })
+  //  .populate({
+  //   path: 'user',
+  //   select: 'name photo'
+  // });
+
+  next();
+});
+
 
 
 // // DOCUMENT MIDDLEWARE: runs before .save() and .create()
