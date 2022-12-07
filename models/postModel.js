@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
+const User = require('./userModel');
 // const validator = require('validator');
 
 const postSchema = new mongoose.Schema(
@@ -40,7 +41,7 @@ const postSchema = new mongoose.Schema(
 postSchema.pre(/^find/, function(next) {
   this.populate({
     path: 'user',
-    select: 'name'
+    select: 'name email'
   })
   //  .populate({
   //   path: 'user',
