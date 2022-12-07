@@ -24,7 +24,7 @@ exports.getAllPosts = async (req, res) => {
 
 exports.getPost = async (req, res) => {
   try {
-    const tour = await Tour.findById(req.params.id);
+    const tour = await Tour.findById(req.params.id).populate('user');
     // Tour.findOne({ _id: req.params.id })
 
     res.status(200).json({
