@@ -9,7 +9,7 @@ router
   .route('/')
   .get(postController.getAllPosts)
   .post(authController.protect, 
-        authController.restrictTo('user'),
+        authController.restrictTo('admin'),
         postController.createPost);
 
 router
