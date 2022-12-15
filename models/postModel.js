@@ -49,8 +49,6 @@ postSchema.pre(/^find/, function(next) {
   // });
   
 
-  
-
   next();
 });
 
