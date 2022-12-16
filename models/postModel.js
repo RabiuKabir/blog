@@ -47,10 +47,7 @@ postSchema.pre(/^find/, function(next) {
   //   path: 'user',
   //   select: 'name photo'
   // });
-   //  .populate({
-  //   path: 'user',
-  //   select: 'name photo'
-  // });
+  
   
 
   next();
