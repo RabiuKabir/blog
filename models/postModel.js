@@ -48,10 +48,6 @@ postSchema.pre(/^find/, function(next) {
   //   select: 'name photo'
   // });
   
-   //  .populate({
-  //   path: 'user',
-  //   select: 'name photo'
-  // });
   
 
   next();
