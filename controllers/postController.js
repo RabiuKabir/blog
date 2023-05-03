@@ -99,7 +99,7 @@ exports.deletePost = async (req, res) => {
   }
 };
 
-// exports.getTourStats = async (req, res) => {
+// exports.getTourStats = async (req, res) => { 
 //   try {
 //     const stats = await Tour.aggregate([
 //       {
@@ -177,6 +177,7 @@ exports.deletePost = async (req, res) => {
 //       }
 //     ]);
 
+//
 //     res.status(200).json({
 //       status: 'success',
 //       data: {
